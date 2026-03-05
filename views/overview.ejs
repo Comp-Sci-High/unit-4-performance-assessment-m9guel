@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InstaClone | Overview</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <h1 class="logo">InstaClone</h1>
+    <a href="/" class="nav-button">Home</a>
+  </nav>
+
+  <!-- Posts Container -->
+<section class ="posts-container">
+
+<% for (let i = 0; i < posts.length; i++) { %>
+
+<div class = "post">
+
+<div class = "post-header">
+<img src= "<%= posts[i].profileImage %>" class = "profile-img" alt ="Profile">
+<span class="username"><%= posts[i].username %>
+</span>
+</div>
+
+<img src="<%= posts[i].imageUrl %>" class="post-image" alt="Post Image">
+
+<div class="post-content">
+
+<p class="likes">
+  <% if (posts[i].likes === 1) { %>
+  1 like
+<% } else { %>
+<%= posts[i].likes %> likes
+<% } %>
+</p>
+
+<p class = "caption">
+  <%= posts[i].username %> <%= posts[i].caption %>
+</p>
+
+
+</div>
+</div>
+
+<% } %>
+
+</section>
+   
+
+
+</body>
+</html>
